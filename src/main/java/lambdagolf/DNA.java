@@ -20,13 +20,13 @@ public final class DNA {
 
     public void addGene(String gene) {
         if (genes.contains(gene)) {
-            throw new IllegalArgumentException();
+            return;
         }
         if (gene.chars()
                 .mapToObj(charInt -> Character.toString((char) charInt))
                 .anyMatch(nucleobase -> !nucleobases.contains(nucleobase))
         ) {
-                throw new IllegalArgumentException();
+            return;
         }
         genes.add(gene);
     }
@@ -37,7 +37,7 @@ public final class DNA {
 
     public boolean containsCodon(String codon) {
         if (codon.length() != 3) {
-            throw new IllegalArgumentException();
+            return false;
         }
         return genes.stream()
                     .anyMatch(gene -> gene.contains(codon));
@@ -48,6 +48,10 @@ public final class DNA {
                    .map(nucleobase -> getComplement(nucleobase))
                    .map(nucleobase -> nucleobase.equals('T') ? "U" : Character.toString(nucleobase))
                    .reduce("", (RNA, nucleobase) -> RNA + nucleobase);
+    }
+
+    public String getStrand() {
+        return String.join("", genes);
     }
 
     public String getComplementaryStrand() {
@@ -62,7 +66,7 @@ public final class DNA {
             case 'T' -> 'A';
             case 'G' -> 'C';
             case 'C' -> 'G';
-            default -> throw new IllegalArgumentException();
+            default -> 'X';
         };
     }
 
@@ -74,6 +78,6 @@ public final class DNA {
 
     @Override
     public String toString() {
-        return String.join("", genes) + "\n" + getComplementaryStrand();
+        return getStrand() + "\n" + getComplementaryStrand();
     }
 }

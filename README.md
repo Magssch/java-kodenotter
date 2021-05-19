@@ -21,11 +21,11 @@ I kravspesifikasjonen fra TrondheimBio får du følgende krav:
 
 Prosjektleder har allerede konkretisert de funksjonelle kravene til et sett med metoder som du skal implementere inne i din `DNA`-klasse:
 
-- **addGene**: Tar inn et gen (String) og legger til dette i DNA-objektet _dersom_ det ikke allerede finnes i DNA-et, samt at alle nukleobasene i genet består av gyldige verdier (A, T, G, C)
+- **addGene**: Tar inn et gen (String) og legger til dette i DNA-objektet _dersom_ det ikke allerede finnes i DNA-et, samt at alle nukleobasene i genet består av gyldige verdier (A, T, G, C).
 - **getAllMatchingGenes**: Tar inn et `Predicate` av typen String og returnerer en liste med gener (`String`) som matcher predikatet.
 - **reorder**: Tar inn et `Comparator`-objekt av typen `String` og sorterer genene i DNA-et med dette.
-- **containsCodon**: Returnerer en `boolean` avhengig av om DNA-objektet inneholder et spesifikt kodon. Dersom kodonet ikke er av lengde tre så skal det kastes et `IllegalArgumentException`.
-- **getComplement**: Tar innen en nukleobase (char) og returnerer komplementet til denne (A->T, etc.). Dersom en ugyldig nukleobase gis som inputargument så skal det kastes et `IllegalArgumentException`
+- **containsCodon**: Returnerer en `boolean` avhengig av om DNA-objektet inneholder et spesifikt kodon. Dersom kodonet ikke er av lengde tre så skal det alltid returneres `false`.
+- **getComplement**: Tar innen en nukleobase (char) og returnerer komplementet til denne som en `char` (A->T, etc.). Dersom en ugyldig nukleobase gis som inputargument så skal `X` returneres.
   - _Eksempel: Hvis inputargument er **"G"** skal denne returnere **"C"**._
 - **getComplementaryStrand**: Returnerer en sammenhengende streng av komplementære nukleobaser, som danner den andre kjeden i DNA-et.
   - _Eksempel: Hvis innholdet i DNA-et er **"GACT"** skal denne returnere **"CTGA"**._
@@ -40,3 +40,7 @@ Prosjektleder nevner forøvrig at mange av disse metodene kan implementeres med 
 ## Poeng
 
 Samtlige klasser nevnt ovenfor gir poeng, opptil totalt 190 poeng. Det vil testes for diverse unntak og riktighet.
+
+## Hjelp jeg står fast!
+
+Det er vanskelig å lage gode beskrivelser til oppgaver som er lett å forstå. Dersom du står fast kan du titte på (en av veldig mange mulige løsninger) [her](https://github.com/Magssch/java-kodenotter/blob/main/src/main/java/lambdagolf/DNA.java)
