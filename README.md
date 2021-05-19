@@ -23,8 +23,8 @@ Prosjektleder har allerede konkretisert de funksjonelle kravene til et sett med 
 
 - **addGene**: Tar inn et gen (String) og legger til dette i DNA-objektet _dersom_ det ikke allerede finnes i DNA-et, samt at alle nukleobasene i genet består av gyldige verdier (A, T, G, C)
 - **getAllMatchingGenes**: Tar inn et **Predicate** av typen String og returnerer en liste med gener (String) som matcher predikatet.
-- **reorder**: Tar inn et **Comparator**-objekt av typen String og sorterer listen med dette.
-- **containsCodon**: Returnerer en **boolean** avhengig av om DNA-objektet inneholder et spesifikt kodon. Dersom kodonet ikke er av lengde tre så skal det kastes et `IllegalArgumentException`.
+- **reorder**: Tar inn et `Comparator`-objekt av typen String og sorterer listen med dette.
+- **containsCodon**: Returnerer en `boolean` avhengig av om DNA-objektet inneholder et spesifikt kodon. Dersom kodonet ikke er av lengde tre så skal det kastes et `IllegalArgumentException`.
 - **getComplement**: Tar innen en nukleobase (char) og returnerer komplementet til denne (A->T, etc.). Dersom en ugyldig nukleobase gis som inputparameter så skal det kastes et `IllegalArgumentException`
 - **transcribeToRNA**: Returnerer en sammenhengende RNA-streng bestående av _alle_ gener i DNA-et. RNA-strengen må også være invertert til komplementær-nukleobaser (A->T, etc.) og T skal byttes ut med U.
 - **getComplementaryStrand**: Returnerer en sammenhengende streng av komplementære nukleobaser, som danner den andre kjeden i DNAet. Eksempel: Hvis innholdet i DNAet er **"GACT"** skal denne returnere **"CTGA"**.
