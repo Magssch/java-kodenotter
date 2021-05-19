@@ -2,6 +2,7 @@ package lambdagolf;
 
 import org.junit.Test;
 import static org.junit.Assert.*;
+import org.junit.runners.JUnit4;
 
 import org.junit.Before;
 
@@ -15,11 +16,13 @@ public class DNATest {
     }
 
     @Test
+    @Points(0)
     public void sanityCheck() {
         assertEquals("DNA should be initialized with zero length", 0, dna.toString().trim().length());
     }
 
     @Test
+    @Points(25)
     public void testGetComplementaryStrand() {
         dna.addGene("TTAAGCAT");
         assertEquals("DNA strand should be printed with complementary base pair nucleobases (e.g. A -> T etc.)",
@@ -29,6 +32,7 @@ public class DNATest {
     }
 
     @Test
+    @Points(25)
     public void testAddGenes() {
         dna.addGene("GATTACA");
         assertEquals("DNA should be displayed with both strands when added",
@@ -43,6 +47,7 @@ public class DNATest {
     }
 
     @Test
+    @Points(10)
     public void testAddInvalidGene() {
         try {
             dna.addGene("GATQTEACKA");
@@ -53,6 +58,7 @@ public class DNATest {
     }
 
     @Test
+    @Points(25)
     public void testReorder() {
         dna.addGene("GATTACA");
         dna.addGene("GCCA");
@@ -71,6 +77,7 @@ public class DNATest {
     }
 
     @Test
+    @Points(25)
     public void testFilterGenes() {
         dna.addGene("GATTACA");
         dna.addGene("GCCA");
@@ -83,6 +90,7 @@ public class DNATest {
     }
 
     @Test
+    @Points(25)
     public void testContainsCodon() {
         dna.addGene("GATTACA");
         dna.addGene("TTGGAACC");
@@ -99,6 +107,7 @@ public class DNATest {
     }
 
     @Test
+    @Points(45)
     public void testTranscribeToRNA() {
         dna.addGene("GATTACA");
         dna.addGene("TTGGAACC");
@@ -108,6 +117,7 @@ public class DNATest {
     }
 
     @Test
+    @Points(10)
     public void testGetComplementErrorHandling() {
         try {
             dna.getComplement('K');
