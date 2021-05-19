@@ -22,7 +22,9 @@ public final class DNA {
         if (genes.contains(gene)) {
             return;
         }
-        if (gene.chars()
+        if (genes.contains(gene) ||
+            gene.length() < 1 ||
+            gene.chars()
                 .mapToObj(charInt -> Character.toString((char) charInt))
                 .anyMatch(nucleobase -> !nucleobases.contains(nucleobase))
         ) {

@@ -21,7 +21,7 @@ I kravspesifikasjonen fra TrondheimBio får du følgende krav:
 
 Prosjektleder har allerede konkretisert de funksjonelle kravene til et sett med metoder som du skal implementere inne i din `DNA`-klasse:
 
-- **addGene**: Tar inn et gen (String) og legger til dette i DNA-objektet _dersom_ det ikke allerede finnes i DNA-et, samt at alle nukleobasene i genet består av gyldige verdier (A, T, G, C).
+- **addGene**: Tar inn et gen (String) og legger til dette i DNA-objektet _dersom_ det ikke allerede finnes i DNA-et, det består av minst én nukleobase, samt at alle nukleobasene i genet består av gyldige verdier (A, T, G, C).
 - **getAllMatchingGenes**: Tar inn et `Predicate` av typen String og returnerer en liste med gener (`String`) som matcher predikatet.
 - **reorder**: Tar inn et `Comparator`-objekt av typen `String` og sorterer genene i DNA-et med dette.
 - **containsCodon**: Returnerer en `boolean` avhengig av om DNA-objektet inneholder et spesifikt kodon. Dersom kodonet ikke er av lengde tre så skal det alltid returneres `false`.
