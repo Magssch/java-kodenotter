@@ -1,4 +1,4 @@
-package lambdagolf;
+package dna;
 
 import java.util.ArrayList;
 import java.util.Comparator;
