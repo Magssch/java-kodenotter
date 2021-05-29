@@ -44,4 +44,4 @@ Samtlige klasser nevnt ovenfor gir poeng, opptil totalt 190 poeng. Det vil teste
 ## Hjelp jeg står fast!
 
 
-Dersom du står fast kan du titte på (en av veldig mange mulige løsninger) [her](https://github.com/Magssch/java-kodenotter/blob/main/src/main/java/lambdagolf/DNA.java)
+Dersom du står fast kan du titte på (en av veldig mange mulige løsninger) [her](https://github.com/Magssch/java-kodenotter/blob/main/descriptions/DNA.md)
